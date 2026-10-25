@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#c8104a">
+<title>CI Plan | Pampasan Sakit Kritikal AIA</title>
+<style>
+:root{
+ --aia:#c8104a;--aia-dark:#920c37;--pink:#f6b4c8;--pink-soft:#fff0f4;
+ --yellow:#ffd979;--yellow-soft:#fff4ce;--cream:#fffaf5;--ink:#38232b;
+ --muted:#79636b;--line:#f0d3dc;--white:#fff;--green:#1eaa68;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+ background:radial-gradient(ellipse at 10% 0%,#fff9df 0,transparent 35%),
+ linear-gradient(145deg,#fffaf5 0%,#fff0f4 48%,#f8d6e1 100%);min-height:100vh}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.wrap{max-width:1120px;margin:auto;padding:18px}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px}
+.brand-logo{width:54px;height:54px;object-fit:contain;background:#fff;border-radius:50%;padding:3px;flex:0 0 auto}\n.brandmark{display:grid;place-items:center;width:46px;height:46px;background:var(--aia);color:white;border-radius:15px;font-weight:1000;font-size:18px;box-shadow:0 8px 20px #c8104a30}
+.brand small{display:block;font-size:11px;letter-spacing:1.5px;color:var(--muted);margin-top:3px}
+.top-pill{border:1px solid #e8c7d1;background:#ffffffb8;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:800;color:var(--aia-dark)}
+.hero{position:relative;overflow:hidden;border:1px solid #f1d3dc;border-radius:30px;padding:30px 26px;background:linear-gradient(115deg,#fff 0%,#fff9e8 48%,#ffe5ee 100%);box-shadow:0 18px 45px #8d23400f}
+.hero:after{content:"";position:absolute;width:260px;height:260px;right:-70px;top:-100px;border-radius:50%;background:linear-gradient(135deg,#ffd97980,#f6b4c860);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--yellow);border-radius:999px;padding:8px 14px;font-size:11px;font-weight:1000;letter-spacing:2px;color:#53313a}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,6vw,66px);line-height:.96;letter-spacing:-1.6px;margin:18px 0 12px;color:#441b29}
+.hero h1 span{color:var(--aia)}
+.hero p{max-width:620px;margin:0;color:var(--muted);line-height:1.65;font-size:15px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 12px;font-size:12px;font-weight:800}
+.section{margin-top:18px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:0 2px 12px}
+.section-head h2{margin:0;font-size:21px;letter-spacing:-.5px}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.card{background:#ffffffed;border:1px solid var(--line);border-radius:23px;padding:20px;box-shadow:0 10px 30px #9a3b5908}
+.profile-card{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;background:linear-gradient(120deg,#c8104a 0%,#a70c3d 62%,#7c092d 100%);color:#fff;border:0;overflow:hidden;position:relative}
+.profile-card:after{content:"";position:absolute;right:-30px;bottom:-100px;width:260px;height:260px;border:1px solid #ffffff26;border-radius:50%;box-shadow:0 0 0 30px #ffffff08,0 0 0 60px #ffffff05}
+.profile-photo{width:150px;height:175px;object-fit:cover;object-position:center 22%;border-radius:18px;border:3px solid #fff;box-shadow:0 10px 25px #3a001b40}
+.profile-info{position:relative;z-index:1}
+.profile-kicker{font-size:11px;letter-spacing:2px;font-weight:900;color:#ffe0a0}
+.profile-info h3{font-size:clamp(19px,3vw,28px);line-height:1.15;margin:8px 0}
+.profile-info .role{color:#ffe2e9;font-weight:700;margin-bottom:13px}
+.agent-meta{display:flex;flex-wrap:wrap;gap:8px}
+.agent-meta span{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid #ffffff42;background:#ffffff12;border-radius:999px;font-size:12px}
+.profile-company-logo{display:block;max-width:190px;width:100%;max-height:58px;object-fit:contain;object-position:left center;background:#fff;border-radius:8px;padding:5px}\n.logo-lockup{display:inline-flex;align-items:center;gap:7px;margin-top:15px;font-weight:900;letter-spacing:.5px;font-size:12px}
+.logo-symbol{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:white;color:var(--aia);font-weight:1000;font-size:13px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.field label{display:block;margin-bottom:7px;color:#704b57;font-weight:900;font-size:12px}
+.field input,.field select{width:100%;min-height:47px;border:1px solid #e9cbd4;background:#fff;border-radius:13px;padding:12px;color:var(--ink);outline:none}
+.field input:focus,.field select:focus{border-color:var(--aia);box-shadow:0 0 0 3px #c8104a14}
+.helper{display:block;margin-top:6px;font-size:11px;color:var(--muted);line-height:1.45}
+.gender-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.choice{border:1px solid #ebcbd5;background:#fff;border-radius:14px;padding:10px 8px;text-align:center;color:var(--ink);font-weight:850}
+.choice .emoji{display:block;font-size:25px;margin-bottom:3px}
+.choice.active{border:2px solid var(--aia);background:#fff0f4;box-shadow:0 4px 12px #c8104a10}
+.plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.plan{height:100%;width:100%;text-align:left;border:1.5px solid #edcbd4;border-radius:18px;background:#fff;padding:16px;color:var(--ink);transition:.15s}
+.plan.active{border:2px solid var(--aia);background:linear-gradient(160deg,#fff 0%,#fff0f4 100%);box-shadow:0 8px 20px #c8104a15}
+.plan .plan-icon{font-size:27px}
+.plan strong{display:block;font-size:14px;line-height:1.35;margin:8px 0 5px}
+.plan small{display:block;color:var(--muted);font-size:11px;line-height:1.5}
+.plan .plan-check{display:inline-block;margin-top:12px;border-radius:999px;padding:5px 9px;background:#f7edf0;color:#815b66;font-size:10px;font-weight:900}
+.plan.active .plan-check{background:var(--aia);color:white}
+.price-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.95fr);gap:14px}
+.price-card{position:relative;overflow:hidden;border-radius:24px;padding:23px;color:#fff;background:linear-gradient(135deg,#c8104a 0%,#a90c3c 60%,#7f0a30 100%);min-height:265px}
+.price-card:after{content:"";position:absolute;width:230px;height:230px;right:-80px;top:-95px;border:1px solid #ffffff2c;border-radius:50%;box-shadow:0 0 0 24px #ffffff08,0 0 0 48px #ffffff05}
+.price-top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price-label{font-size:13px;font-weight:800;color:#ffe2e8}
+.price-gender{font-size:34px;background:#ffffff1b;border:1px solid #ffffff40;border-radius:16px;padding:6px 10px}
+.price-amount{position:relative;z-index:1;font-size:clamp(42px,7vw,65px);font-weight:1000;line-height:1.1;letter-spacing:-2px;margin:16px 0 4px;overflow-wrap:anywhere}
+.price-amount small{font-size:15px;letter-spacing:0;font-weight:800}
+.price-period{font-size:12px;color:#ffe2e8}
+.price-divider{border:0;border-top:1px solid #ffffff40;margin:18px 0 13px}
+.price-summary{position:relative;z-index:1;display:flex;align-items:center;gap:10px;font-size:12px;line-height:1.5}
+.price-summary strong{display:block;font-size:14px}
+.price-summary .summary-emoji{font-size:27px}
+.price-status{display:inline-flex;align-items:center;gap:6px;background:#ffffff18;border:1px solid #ffffff40;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:800}
+.coverage-card h3{margin:0 0 4px;font-size:18px}
+.coverage-card .sub{margin:0 0 12px;color:var(--muted);font-size:11px;line-height:1.5}
+.coverage-row{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid #f4e4e8}
+.coverage-row:last-child{border-bottom:0}
+.coverage-icon{display:grid;place-items:center;flex:0 0 37px;height:37px;border-radius:12px;background:var(--yellow-soft);font-size:20px}
+.coverage-row strong{display:block;font-size:12px;margin-bottom:3px}
+.coverage-row span{display:block;color:var(--muted);font-size:11px;line-height:1.5}
+.notice{padding:12px 13px;background:var(--yellow-soft);border:1px solid #f2df9c;border-radius:13px;font-size:11px;line-height:1.5;color:#5b4a2c;margin-top:13px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:14px 12px;text-align:center;text-decoration:none;font-weight:950;font-size:13px;min-height:49px}
+.btn-agent{background:#1eaa68;color:white}
+.btn-client{background:var(--yellow);color:#422832}
+.btn:hover{filter:brightness(.98);transform:translateY(-1px)}
+.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:14px;align-items:stretch}
+.why-poster{width:100%;height:100%;max-height:600px;object-fit:cover;object-position:top;border-radius:18px;border:1px solid var(--line)}
+.why-list{display:grid;gap:10px}
+.why-item{display:flex;gap:11px;padding:14px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.why-item .emoji{font-size:24px;margin:0}
+.why-item strong{display:block;font-size:13px;margin-bottom:4px}
+.why-item p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+.footer{text-align:center;color:var(--muted);padding:25px 10px 12px;font-size:11px;line-height:1.7}
+.footer strong{color:var(--aia)}
+.disclaimer{font-size:10px;color:#806b72;line-height:1.55;margin-top:10px}
+@media(max-width:760px){
+ .wrap{padding:10px}.hero{padding:24px 17px;border-radius:24px}.topline{align-items:flex-start}.top-pill{font-size:10px}
+ .profile-card{grid-template-columns:105px 1fr;gap:14px;padding:15px}.profile-photo{width:105px;height:140px}
+ .form-grid,.price-layout,.why-grid{grid-template-columns:1fr}.plan-grid{grid-template-columns:1fr}.plan{padding:14px}
+ .price-card{min-height:245px}.price-amount{font-size:54px}.card{padding:15px;border-radius:19px}
+ .actions{grid-template-columns:1fr}.why-poster{max-height:none;height:auto}.section-head h2{font-size:19px}
+}
+@media(min-width:761px) and (max-width:950px){.plan-grid{grid-template-columns:1fr}.price-layout{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topline">
+    <div class="brand"><img class="brand-logo" src="assets/aia-mountain-logo.jpeg" alt="Logo AIA gunung"><div>CI PLAN CALCULATOR<small>PAMPASAN SAKIT KRITIKAL</small></div></div>
+    <div class="top-pill">🌸 PINK · GOLD · WHITE</div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">✨ CI PLAN · KETAHUI PERLINDUNGAN ANDA</span>
+      <h1>PAMPASAN<br><span>SAKIT KRITIKAL</span></h1>
+      <p>Semak anggaran sumbangan bulanan dan fahami manfaat perlindungan untuk membantu anda merancang masa depan dengan lebih yakin.</p>
+      <div class="hero-tags">
+        <span class="tag">🛡️ Pampasan sakit kritikal</span>
+        <span class="tag">💗 Perlindungan keluarga</span>
+        <span class="tag">🌼 Semakan mudah</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head"><div><h2>👩🏻‍💼 Profil Ejen</h2><p>Kenali perunding yang membantu anda.</p></div></div>
+    <div class="card profile-card">
+      <img class="profile-photo" src="assets/agent-profile-photo.jpg" alt="Foto profil ejen Syaza Azlin Ardini binti Azman">
+      <div class="profile-info">
+        <div class="profile-kicker">AIA LIFE PLANNER</div>
+        <h3>SYAZA AZLIN ARDINI BINTI AZMAN</h3>
+        <div class="role">Perunding Perlindungan · AIA Public Takaful</div>
+        <div class="agent-meta">
+          <span>🪪 Kod ejen: <strong>1189Z</strong></span>
+          <span>📱 018-254-0206</span>
+        </div>
+        <div class="logo-lockup"><img class="profile-company-logo" src="assets/aia-public-takaful-logo.png" alt="Logo AIA Public Takaful"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>📝 Maklumat Client</h2><p>Isi maklumat asas untuk menyediakan ilustrasi.</p></div></div>
+    <div class="card">
+      <div class="form-grid">
+        <div class="field"><label for="client">👤 Nama client</label><input id="client" type="text" autocomplete="name" placeholder="Contoh: Nur Aisyah"></div>
+        <div class="field"><label for="age">🎂 Umur</label><select id="age"></select></div>
+        <div class="field"><label>🚻 Jantina</label><div class="gender-grid">
+          <button type="button" class="choice active" id="male" aria-pressed="true"><span class="emoji">👨🏻</span>Lelaki</button>
+          <button type="button" class="choice" id="female" aria-pressed="false"><span class="emoji">👩🏻</span>Wanita</button>
+        </div></div>
+        <div class="field"><label for="smoking">🚬 Status merokok / vape</label><select id="smoking">
+          <option value="smoker">🚬 Merokok / vape</option>
+          <option value="nonsmoker">🌿 Tidak merokok / vape</option>
+        </select><span class="helper">Kadar yang tersedia dalam jadual rujukan adalah khusus untuk lelaki merokok dan wanita tidak merokok.</span></div>
+        <div class="field"><label for="job">💼 Pekerjaan</label><input id="job" type="text" autocomplete="organization-title" placeholder="Contoh: Guru / Eksekutif"></div>
+        <div class="field"><label for="phone">📲 No. WhatsApp client</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Contoh: 0123456789"><span class="helper">Nombor ini digunakan untuk membuka WhatsApp client dengan mesej quotation yang telah disusun.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>🎯 Pilih Jenis Perlindungan</h2><p>Pilih satu daripada tiga pilihan di bawah.</p></div></div>
+    <div class="plan-grid">
+      <button type="button" class="plan active" id="plan0" aria-pressed="true">
+        <span class="plan-icon">🛡️</span><strong>Advanced Stage · RM100,000</strong>
+        <small>Pampasan bagi sakit kritikal tahap lanjut, tertakluk pada definisi dan terma sijil/polisi.</small><span class="plan-check">✓ PILIHAN AKTIF</span>
+      </button>
+      <button type="button" class="plan" id="plan1" aria-pressed="false">
+        <span class="plan-icon">🌷</span><strong>Advanced Stage RM100,000 + Early Stage RM10,000</strong>
+        <small>Perlindungan tahap lanjut bersama manfaat sakit kritikal tahap awal seperti bahan rujukan.</small><span class="plan-check">PILIH PELAN</span>
+      </button>
+      <button type="button" class="plan" id="plan2" aria-pressed="false">
+        <span class="plan-icon">🌸</span><strong>Advanced Stage RM100,000 + Early Stage RM50,000</strong>
+        <small>Perlindungan tahap lanjut dengan manfaat Early Stage RM50,000 seperti jadual kadar rujukan.</small><span class="plan-check">PILIH PELAN</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>💰 Anggaran Sumbangan Bulanan</h2><p>Kadar dipaparkan mengikut umur, jantina, status merokok dan pilihan pelan yang tersedia.</p></div></div>
+    <div class="price-layout">
+      <div class="price-card">
+        <div class="price-top"><div class="price-label">Sumbangan bulanan rujukan</div><div class="price-gender" id="priceGender">👨🏻</div></div>
+        <div class="price-amount" id="price">RM 90.00</div>
+        <div class="price-period" id="pricePeriod">Sebulan · Anggaran rujukan</div>
+        <hr class="price-divider">
+        <div class="price-summary"><span class="summary-emoji" id="summaryEmoji">👨🏻</span><div><strong id="summary">Lelaki · Umur 20</strong><span id="summaryPlan">Advanced Stage RM100,000</span><br><span class="price-status" id="rateStatus">✓ Kadar tersedia dalam jadual</span></div></div>
+      </div>
+      <div class="card coverage-card">
+        <h3>✨ Ringkasan Coverage</h3><p class="sub" id="coverageSub">Manfaat bagi pilihan perlindungan yang dipilih.</p>
+        <div class="coverage-row"><div class="coverage-icon">🛡️</div><div><strong>Advanced Stage</strong><span>RM100,000 — manfaat sakit kritikal tahap lanjut seperti yang dinyatakan dalam bahan rujukan.</span></div></div>
+        <div class="coverage-row"><div class="coverage-icon">🌷</div><div><strong>Early Stage</strong><span id="earlyBenefit">Tidak termasuk dalam pilihan ini.</span></div></div>
+        <div class="coverage-row"><div class="coverage-icon">🧑‍🤝‍🧑</div><div><strong>Faedah penjaga</strong><span>RM3,000 seperti yang dinyatakan dalam bahan rujukan. Sahkan syarat kelayakan.</span></div></div>
+        <div class="coverage-row"><div class="coverage-icon">💗</div><div><strong>Pampasan kematian</strong><span>10% daripada jumlah perlindungan; RM10,000 berdasarkan perlindungan RM100,000, tertakluk pada terma.</span></div></div>
+        <div class="coverage-row"><div class="coverage-icon">🕒</div><div><strong>Tempoh perlindungan</strong><span>Sehingga umur 70 tahun; bahan rujukan turut menyebut auto extend ke umur 100 tahun. Sahkan terma produk semasa.</span></div></div>
+        <div class="coverage-row"><div class="coverage-icon">🩺</div><div><strong>Skop penyakit</strong><span>Bahan rujukan menyebut 75 jenis sakit kritikal dan 105 keadaan bagi manfaat awal/pertengahan. Rujuk dokumen rasmi untuk definisi lengkap.</span></div></div>
+      </div>
+    </div>
+    <div class="notice" id="rateNotice">ℹ️ Kadar adalah anggaran rujukan bulanan, bukan pengesahan kelayakan atau tawaran rasmi.</div>
+    <div class="actions">
+      <a class="btn btn-agent" id="agentWA" href="https://wa.me/60182540206" target="_blank" rel="noopener">💬 WhatsApp Agent Jaja</a>
+      <button class="btn btn-client" id="clientWA" type="button">📲 WhatsApp Quotation kepada Client</button>
+    </div>
+    <p class="disclaimer">Penting: Angka dan manfaat ini diambil daripada imej jadual rujukan yang dibekalkan. Sila sahkan kadar terkini, definisi penyakit, terma, pengecualian, kelayakan dan nama manfaat dengan AIA Public Takaful sebelum digunakan untuk cadangan rasmi.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>💗 Kenapa Penting Ambil Tahu CI Plan?</h2><p>Perlindungan kewangan boleh membantu ketika berdepan cabaran kesihatan.</p></div></div>
+    <div class="card why-grid">
+      <img class="why-poster" src="assets/why-ci-plan.jpg" alt="Poster sebab penting mengetahui CI Plan">
+      <div class="why-list">
+        <div class="why-item"><span class="emoji">💰</span><div><strong>Bantu persediaan kewangan</strong><p>Menyediakan bantuan kewangan jika tuntutan diluluskan bagi penyakit kritikal yang dilindungi.</p></div></div>
+        <div class="why-item"><span class="emoji">🧾</span><div><strong>Bantu komitmen bulanan</strong><p>Boleh membantu menampung komitmen sepanjang tempoh rawatan atau pemulihan, bergantung pada keperluan keluarga.</p></div></div>
+        <div class="why-item"><span class="emoji">🩺</span><div><strong>Fokus pada rawatan dan pemulihan</strong><p>Memberi ruang untuk memberi tumpuan kepada kesihatan tanpa mengabaikan perancangan kewangan.</p></div></div>
+        <div class="why-item"><span class="emoji">👨‍👩‍👧</span><div><strong>Kurangkan tekanan kepada keluarga</strong><p>Perancangan awal boleh membantu mengurangkan beban kewangan keluarga jika berlaku perkara tidak dijangka.</p></div></div>
+        <div class="why-item"><span class="emoji">🌱</span><div><strong>Bersedia lebih awal</strong><p>Kita tidak boleh menjangka masa depan, tetapi kita boleh menilai keperluan perlindungan lebih awal.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">Dibina untuk memudahkan semakan ilustrasi perlindungan.<br><strong>This Apps created by Syazwan Zulhelmy</strong><br>© CI Plan Calculator · Reka bentuk tidak mewakili pengesahan rasmi AIA.</footer>
+</div>
+<script>
+const rates = {
+20:{ms:[90.00,98.61,133.04],fn:[53.17,60.64,90.50]},
+21:{ms:[93.33,102.22,137.79],fn:[54.00,61.71,92.54]},
+22:{ms:[96.67,105.87,142.67],fn:[55.58,63.54,95.37]},
+23:{ms:[101.17,110.69,148.79],fn:[57.83,66.05,98.91]},
+24:{ms:[104.50,114.35,153.75],fn:[60.00,68.48,102.42]},
+25:{ms:[108.92,119.11,159.88],fn:[62.25,71.02,106.12]},
+26:{ms:[113.33,123.87,166.04],fn:[64.50,73.57,109.83]},
+27:{ms:[118.92,129.83,173.46],fn:[66.67,76.04,113.54]},
+28:{ms:[123.33,134.62,179.79],fn:[68.92,78.62,117.42]},
+29:{ms:[128.92,140.61,187.38],fn:[72.25,82.28,122.42]},
+30:{ms:[135.58,147.68,196.08],fn:[75.58,85.95,127.45]},
+31:{ms:[141.17,153.70,203.84],fn:[77.83,88.55,131.45]},
+32:{ms:[147.83,160.80,212.70],fn:[81.17,92.28,136.71]},
+33:{ms:[155.58,169.03,222.83],fn:[85.58,97.07,143.04]},
+34:{ms:[162.25,176.19,231.96],fn:[88.92,100.81,148.38]},
+35:{ms:[171.17,185.62,243.42],fn:[93.33,106.00,156.70]},
+36:{ms:[178.92,193.90,253.84],fn:[96.67,110.29,164.79]},
+37:{ms:[188.92,204.46,266.63],fn:[102.25,116.92,175.58]},
+38:{ms:[198.92,215.05,279.59],fn:[106.67,122.42,185.42]},
+39:{ms:[208.92,225.77,293.17],fn:[114.92,131.64,198.50]},
+40:{ms:[218.92,236.82,308.42],fn:[116.67,134.38,205.21]},
+41:{ms:[231.17,250.20,326.34],fn:[124.50,142.67,215.33]},
+42:{ms:[243.33,263.54,344.37],fn:[138.33,156.68,230.08]},
+43:{ms:[256.67,278.14,364.04],fn:[148.92,168.14,245.00]},
+44:{ms:[272.25,295.06,386.29],fn:[157.83,178.21,259.75]},
+45:{ms:[288.92,313.15,410.09],fn:[173.33,194.95,281.41]},
+46:{ms:[306.67,332.08,433.71],fn:[191.00,213.88,305.42]},
+47:{ms:[326.67,352.58,456.21],fn:[205.67,229.56,325.13]},
+48:{ms:[348.92,375.54,482.04],fn:[216.67,241.30,339.84]},
+49:{ms:[373.33,401.10,512.16],fn:[229.08,254.48,356.08]},
+50:{ms:[401.17,429.92,544.92],fn:[243.08,269.23,373.83]},
+51:{ms:[415.58,444.95,562.41],fn:[244.17,271.75,382.09]},
+52:{ms:[428.92,458.96,579.13],fn:[245.33,273.56,386.50]},
+53:{ms:[444.50,476.02,602.12],fn:[246.42,275.36,391.13]},
+54:{ms:[461.17,496.32,636.92],fn:[247.50,279.44,407.21]},
+55:{ms:[481.17,518.12,665.92],fn:[248.58,283.28,422.08]}
+};
+const $ = id => document.getElementById(id);
+const age = $('age');
+for(let a=20;a<=55;a++){const op=document.createElement('option');op.value=a;op.textContent=`${a} tahun`;age.appendChild(op);}
+let gender='male', plan=0;
+const planNames=[
+ 'Advanced Stage (RM100,000)',
+ 'Advanced Stage (RM100,000) + Early Stage (RM10,000)',
+ 'Advanced Stage (RM100,000) + Early Stage (RM50,000)'
+];
+const money = n => 'RM ' + n.toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});
+function availableRate(){
+ const smoking=$('smoking').value;
+ // The attached official-looking reference table only shows male smoker and female non-smoker rates.
+ if(gender==='male' && smoking==='smoker') return rates[Number(age.value)]?.ms?.[plan] ?? null;
+ if(gender==='female' && smoking==='nonsmoker') return rates[Number(age.value)]?.fn?.[plan] ?? null;
+ return null;
+}
+function update(){
+ const a=Number(age.value), rate=availableRate();
+ const genderText=gender==='male'?'Lelaki':'Wanita';
+ const emoji=gender==='male'?'👨🏻':'👩🏻';
+ $('male').classList.toggle('active',gender==='male');
+ $('female').classList.toggle('active',gender==='female');
+ $('male').setAttribute('aria-pressed',String(gender==='male'));
+ $('female').setAttribute('aria-pressed',String(gender==='female'));
+ for(let i=0;i<3;i++){
+   $('plan'+i).classList.toggle('active',plan===i);
+   $('plan'+i).setAttribute('aria-pressed',String(plan===i));
+   $('plan'+i).querySelector('.plan-check').textContent=plan===i?'✓ PILIHAN AKTIF':'PILIH PELAN';
+ }
+ $('priceGender').textContent=emoji;
+ $('summaryEmoji').textContent=emoji;
+ $('summary').textContent=`${genderText} · Umur ${a}`;
+ $('summaryPlan').textContent=planNames[plan];
+ $('earlyBenefit').textContent=plan===0?'Tidak termasuk dalam pilihan ini.':plan===1?'RM10,000 — manfaat Early Stage seperti dinyatakan dalam bahan rujukan.':'RM50,000 — manfaat Early Stage seperti dinyatakan dalam jadual kadar rujukan.';
+ $('coverageSub').textContent=`Ringkasan manfaat untuk ${planNames[plan]}.`;
+ if(rate===null){
+   $('price').textContent='Semak kadar';
+   $('price').style.fontSize='clamp(30px,5vw,44px)';
+   $('pricePeriod').textContent='Kadar belum tersedia untuk kombinasi ini';
+   $('rateStatus').textContent='⚠️ Kadar tidak dibekalkan';
+   $('rateNotice').textContent='⚠️ Jadual yang dibekalkan hanya menunjukkan kadar lelaki merokok dan wanita tidak merokok. Untuk kombinasi yang dipilih sekarang, sila rujuk jadual kadar rasmi AIA; kalkulator tidak mereka angka.';
+ }else{
+   $('price').textContent=money(rate);
+   $('price').style.fontSize='';
+   $('pricePeriod').textContent='Sebulan · Anggaran rujukan';
+   $('rateStatus').textContent='✓ Kadar tersedia dalam jadual';
+   $('rateNotice').textContent='ℹ️ Kadar dipaparkan ialah kadar bulanan daripada jadual rujukan yang dibekalkan. Ia bukan pengesahan kelayakan atau tawaran rasmi.';
+ }
+}
+$('male').addEventListener('click',()=>{gender='male';update();});
+$('female').addEventListener('click',()=>{gender='female';update();});
+$('smoking').addEventListener('change',update);
+age.addEventListener('change',update);
+for(let i=0;i<3;i++) $('plan'+i).addEventListener('click',()=>{plan=i;update();});
+
+function normalizePhone(value){
+ let digits=value.replace(/\D/g,'');
+ if(digits.startsWith('0')) digits='60'+digits.slice(1);
+ return digits;
+}
+function buildMessage(){
+ const name=$('client').value.trim()||'Tuan/Puan';
+ const job=$('job').value.trim()||'Tidak dinyatakan';
+ const a=Number(age.value);
+ const genderLabel=gender==='male'?'Lelaki 👨🏻':'Wanita 👩🏻';
+ const smoking=$('smoking').value==='smoker'?'Merokok / vape 🚬':'Tidak merokok / vape 🌿';
+ const rate=availableRate();
+ const priceText=rate===null?'Sila semak kadar rasmi AIA bagi kombinasi ini.':money(rate)+' / bulan';
+ const early=plan===0?'Tidak termasuk':plan===1?'RM10,000':'RM50,000';
+ return `Assalamualaikum ${name} 😊
+
+Berikut ialah ringkasan ilustrasi CI Plan Pampasan Sakit Kritikal AIA.
+
+📋 MAKLUMAT CLIENT
+👤 Nama: ${name}
+🎂 Umur: ${a} tahun
+${genderLabel}
+🚬 Status: ${smoking}
+💼 Pekerjaan: ${job}
+
+🛡️ PILIHAN PERLINDUNGAN
+${planNames[plan]}
+
+💰 ANGGARAN SUMBANGAN BULANAN
+${priceText}
+
+✨ RINGKASAN MANFAAT
+🛡️ Advanced Stage: RM100,000
+🌷 Early Stage: ${early}
+🧑‍🤝‍🧑 Faedah penjaga: RM3,000
+💗 Pampasan kematian: 10% daripada jumlah perlindungan
+🕒 Tempoh perlindungan: rujuk terma rasmi produk
+
+Nota: Ini anggaran ilustrasi berdasarkan jadual rujukan yang dibekalkan. Kadar, manfaat, terma, pengecualian dan kelayakan perlu disahkan dengan AIA Public Takaful.
+
+Salam hormat,
+SYAZA AZLIN ARDINI BINTI AZMAN
+AIA LIFE PLANNER · Kod ejen 1189Z`;
+}
+$('clientWA').addEventListener('click',()=>{
+ const raw=$('phone').value.trim();
+ if(!raw){alert('Sila masukkan nombor WhatsApp client terlebih dahulu.');$('phone').focus();return;}
+ const phone=normalizePhone(raw);
+ if(phone.length<10||phone.length>15){alert('Sila semak nombor telefon. Contoh Malaysia: 0123456789.');$('phone').focus();return;}
+ const url='https://wa.me/'+phone+'?text='+encodeURIComponent(buildMessage());
+ window.open(url,'_blank','noopener,noreferrer');
+});
+$('agentWA').addEventListener('click',e=>{
+ // Explicitly opens WhatsApp chat to the agent number shown in the profile.
+ e.currentTarget.href='https://wa.me/60182540206?text='+encodeURIComponent('Assalamualaikum Jaja, saya ingin bertanya tentang CI Plan Pampasan Sakit Kritikal.');
+});
+update();
+</script>
+</body>
+</html>
